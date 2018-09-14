@@ -8,9 +8,9 @@ import random
 def pickRand():
     file = open("occupations.csv", "r")
     dataocc = file.read().split("\n")
-
+    #print dataocc
     #the range removes the header ['Job Class', 'Percentage'] as well as the footer ['Total', '99.8'] and the extra new line at the end.
-    dataocc = dataocc[2:-3]
+    dataocc = dataocc[1:-2]
     #print dataocc
 
     for i in range(len(dataocc)):
