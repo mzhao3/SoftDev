@@ -1,3 +1,7 @@
+# simon- Maggie Zhao, Amit Narang
+# SoftDev1 pd7
+# K10: Jinja Tuning
+# 2018-09-22
 from flask import Flask, render_template
 from random import random, choices
 
