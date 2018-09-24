@@ -6,14 +6,14 @@
   </head>
 
   <body>
-    <h3> Your randomly selected occupation is: {{randomAtTop}} </h3>
+    <h3> Your randomly selected occupation is: {{choice}} </h3>
 
     <p> This table displays information about occupations in the United States (courtesy of Mr. Brooks). The item under 'Job Class' is the name of the occupation and the item under 'Percentage' is the percentage of the U.S. workforce it comprises. </p>
     <table style = "width:100%">
       <th> Job Class </th> <th> Percentage </th>
       {% for key in parent_dict %}
       <tr>
-        <td>  {{key}} </td> <td> {{ parent_dict[key] * 100}} %</td>
+        <td>  {{key}} </td> <td> {{ parent_dict[key] }} %</td>
       </tr>
 
       {% endfor %}

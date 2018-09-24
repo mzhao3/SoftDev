@@ -2,10 +2,14 @@
 # SoftDev1 pd7
 # K10: Jinja Tuning
 # 2018-09-22
+
+#============================================================================
 from flask import Flask, render_template
 from random import random, choices
 
 app = Flask(__name__)
+
+#============================================================================
 def makeOccupationDict():
 	new_dict = {}
 
@@ -21,46 +25,39 @@ def makeOccupationDict():
 		if occupation_percentage[0] in "Job Class Total": # If the 1st value of the line is "Job Class" or "Total" skip it
 			continue
 
-		new_dict[occupation_percentage[0]] = float(occupation_percentage[1])/100 # Creates a new value in the form {"OCCUPATION": PERCENTAGE}
-
-		#print(new_dict.keys(), new_dict[occupation_percentage[0]], new_dict.values())
+		new_dict[occupation_percentage[0]] = float(occupation_percentage[1])
+		# Creates a new value in the form {"OCCUPATION": PERCENTAGE}
 
 	f.close()
 
 	return new_dict
-'''
-def convertDictToHTML(diction):
-    #s = "<table style = \"width:100%\">"
-    s += '\n'
-    for i in diction:
-        s += '<tr>'
-        s += '\n'
-        s += '<td>'
-        s += i
-        s += '</td>'
-        s += '\n'
-        s += '<td>'
-        s += str(diction.get(i))
-        s += '</td>'
-        s += '\n'
-        s += '</tr>'
-        s += '\n'
-    #s += '</table>'
-    return s
-'''
+
+#creates a new dictionary using the occupation.csv
+occupation_dict = makeOccupationDict()
+
+#============================================================================
 def weightedAverageOccupation(dictOfOccupations):
+	#creates list of occupations
     listOcc = list(dictOfOccupations.keys())
+
+	#creates list of percentages of how common the occupation is (which is the weight for randomization)
     listWeight = list(dictOfOccupations.values())
+
+	#choices(population, weights=None, *, cum_weights=None, k=1) is imported from random
+    #Return a k sized list of elements chosen from the population with replacement. If the population is empty, raises IndexError.
     return "" + choices(listOcc,listWeight)[0]
 
-occupation_dict = makeOccupationDict()
-rando = weightedAverageOccupation(occupation_dict)
-
+#============================================================================
+#route to occupations page
 @app.route('/occupations')
-
 def occupations():
-    return render_template('occupations.html', randomAtTop = rando, parent_dict = occupation_dict)
-
+	#renders occupations.html
+	#choice is the occupation chosen randomly
+	#parent_dict is the dictionary of occupations
+    return render_template('occupations.html', choice = weightedAverageOccupation(occupation_dict), parent_dict = occupation_dict)
+	
+#============================================================================
+#runs the app
 if __name__ == "__main__":
     app.debug = True
     app.run()
