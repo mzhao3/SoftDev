@@ -55,7 +55,7 @@ def occupations():
 	#choice is the occupation chosen randomly
 	#parent_dict is the dictionary of occupations
     return render_template('occupations.html', choice = weightedAverageOccupation(occupation_dict), parent_dict = occupation_dict)
-	
+
 #============================================================================
 #runs the app
 if __name__ == "__main__":
