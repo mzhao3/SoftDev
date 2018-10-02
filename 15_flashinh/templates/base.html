@@ -1,0 +1,31 @@
+<!--
+# Eraser: Maggie Zhao & Jiajie Mai
+# SoftDev1 pd7
+# K15: Oh yes, perhaps I do…  
+# 2018-10-02
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+    <title> {% block title %} boo {% endblock %} </title>
+    {% endblock %}
+  </head>
+
+  {% set msgs = get_flashed_messages() %}
+  {% for each in msgs %}
+    {{ each }}
+    <br>
+  {% endfor %}
+
+  <body>
+    {% block content %}
+    booo
+    {% endblock %}
+
+    {% block footer %}
+    &copy; Copyright 2018 Eraser:: Maggie Zhao & Jiajie Mai pd7
+    {% endblock %}
+  </body>
+</html>
