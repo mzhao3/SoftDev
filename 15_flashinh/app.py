@@ -8,6 +8,7 @@ import os
 
 app = Flask(__name__)
 
+# creates a secret key
 app.secret_key = os.urandom(32)
 
 userDict = {'alex' : 'starwars4'}
@@ -59,7 +60,6 @@ def authenticate():
 def logout():
     session.pop('username')
     flash("You have been successfully logged out.")
-    #return ( render_template ( "login.html", message = "You have been successfully logged out."))
     return redirect("/")
 
 if __name__ == "__main__":

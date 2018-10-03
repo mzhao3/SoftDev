@@ -1,7 +1,7 @@
 <!--
 # Eraser: Maggie Zhao & Jiajie Mai
 # SoftDev1 pd7
-# K15: Oh yes, perhaps I do…  
+# K15: Oh yes, perhaps I do…
 # 2018-10-02
 -->
 
@@ -13,6 +13,7 @@
     {% endblock %}
   </head>
 
+<!-- displays flash  messages at the top of the page -->
   {% set msgs = get_flashed_messages() %}
   {% for each in msgs %}
     {{ each }}
@@ -24,6 +25,7 @@
     booo
     {% endblock %}
 
+    <!-- footer to be used -->
     {% block footer %}
     &copy; Copyright 2018 Eraser:: Maggie Zhao & Jiajie Mai pd7
     {% endblock %}
