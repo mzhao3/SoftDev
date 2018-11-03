@@ -29,14 +29,13 @@ with open('peeps.csv') as csvfile:
         # from the sqlite documentation: You shouldn't assemble your query using Python's string operations because doing so is insecure; it makes your program vulnerable to an SQL injection attack
         command = "INSERT INTO peeps (name, age, id)VALUES (?,?,?)"
         values = [(row["name"], row["age"], row["id"])]
-
         # executemany(SQL, [parameters]) where parameters is a list of tuples
         c.executemany(command, values)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #building courses table
-command = "CREATE TABLE courses(name TEXT, age INTEGER, id INTEGER)"
+command = "CREATE TABLE courses(code TEXT, mark INTEGER, id INTEGER)"
 
 #build SQL stmt, save as string
 c.execute(command)
@@ -44,7 +43,7 @@ c.execute(command)
 with open('courses.csv') as csvfile:
     readerCourses = csv.DictReader(csvfile)
     for row in readerCourses:
-        command = "INSERT INTO courses (name, age, id)VALUES (?,?,?)"
+        command = "INSERT INTO courses (code, mark, id)VALUES (?,?,?)"
         values = [(row["code"], row["mark"], row["id"])]
 
         c.executemany(command, values)
