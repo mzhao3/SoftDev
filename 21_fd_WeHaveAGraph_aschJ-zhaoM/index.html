@@ -14,8 +14,8 @@
         <div class="top-bar" style="margin-bottom: .9375rem">
             <ul class = "menu">
                 <li class = "menu-text">WeHaveAGraph</li>
-                <li><a href="#">A Link</a></li>
-                <li><a href="#">Another Link</a></li>
+                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">A Link</a></li>
+                <li><a href="https://theuselessweb.com/">Another Link</a></li>
                 <li><a href="#">Some Other Link</a></li>
             </ul>
             <div class = "top-bar-right">
@@ -24,67 +24,113 @@
         </div>
 
         <div class = "intro" style="padding:30px">
-        <p>   So you want to try Foundation, huh? Well you've come to the right place! </p>
-        <p>   To get started, simply copy <br>
-          <code>
-            &lt;link href = "https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.0/css/foundation.min.css" type= "text/css" rel = "stylesheet"/ &gt;
-          </code> <br>
-          into the <code> &lt;head&gt; &lt;/head&gt;</code> of your HTML file. This is much faster and more efficient than downloading the files and storing them locally. </p>
+        <h4> About Foundation </h4>
+          <p> Foundation is a type of
+              <span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex=1 title="They provide features that increase the standardization and common functionality to a group of web pages by helping to make them look good and interactive. Some examples are Foundation and Bootstrap.">front-end framework</span>. You can work with HTML, CSS, or JavaScript. Foundation provides responsive UI componenets, templates, and code snippets. We will be showcasing some of the cooler features of Foundation that are completely JS free! </p>
+        <hr />
 
+        <h4> Setting it up </h4>
+        <p>   To get started, simply copy the following code into the <code> &lt;head&gt; &lt;/head&gt;</code> of your HTML file. This is a CDN (Content Delivery Network)- a network of servers linked together with the goal of delivering content quickly, cheaply, reliably, and securely. Compared to the alternative( downloading the files and storing them locally) this is much faster and more efficient. You can find the complete version <a href = "https://foundation.zurb.com/sites/download/"> here</a>. <br>
+          <code>
+            &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.0/css/foundation.min.css" type="text/css" rel="stylesheet"/&gt;
+          </code> <br>
+        </p>
+          <hr />
         </div>
 
+        <h4 style="padding-left:30px"> Cards </h4>
+        <p style="padding-left:30px"> Cards are a popular and flexible UI component. Notice that despite the different elements in each card, they are all the same time. Now, make the screen bigger and smaller. Watch what happens to the cards!</p>
+        <div class = "cell large-4 medium-4 small-4 grid-x grid-margin-x">
+            <div class = "cell card large-6 medium-6 small-6">
+                <img src="https://img.purch.com/w/660/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzAxNi82MDMvb3JpZ2luYWwvZWFydGgtZnJvbS1zcGFjZS5qcGc=">
+                <div class="card-section">
+                    <h4>Earth</h4>
+                    <p>This is a card (an element with a <code> .card </code>) class applied. You have the ability to place any kind of content inside. </p>
+                </div>
+            </div>
+            <div class = "cell card large-6 medium-6 small-6">
+                <div class="card-divider">
+                  This is a header!
+                </div>
+
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/768px-Neptune_Full.jpg">
+                <div class="card-section">
+                    <h4>Neptune</h4>
+                    <p>They can be subdivided with the <code>.card-divider</code> or <code>.card-section</code> classes. Compare this card to the previous one, which does not have a header.</p>
+                </div>
+            </div>
+            <div class = "cell card large-6 medium-6 small-6">
+                <img src="https://space-facts.com/wp-content/uploads/mars.jpg">
+                <div class="card-section">
+                    <h4>Mars</h4>
+                    <p> You can also place <span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex=1 title="An image that touches the edges of the page or container.">full-bleed images</span> inside cards. </p>
+                </div>
+            </div>
+            <div class = "cell card large-6 medium-6 small-6">
+              <div class="card-section">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg/330px-Jupiter_and_its_shrunken_Great_Red_Spot.jpg">
+              </div>
+                <div class="card-section">
+                    <h4>Jupiter</h4>
+                    <p> You can also place images into the <code>.card-section</code>. See the difference in this image. (There is padding around the edge of the image.) </p>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <h4 style="padding-left:30px"> Callouts </h4>
+        <p style="padding-left:30px"> Callouts combine panels and alerts into one generic container component. </p>
+        <div class = "cell large-4 medium-4 small-4">
+            <div class = "callout">
+                <h4>This is a callout!</h4>
+                <p> A callout is an element with the <code> .callout</code> class applied. You can put any kind of content inside.
+                  <br>
+                  You can create a callout with the following code: <br> <code>
+                  &lt;div class = "callout"&gt; <br>
+                  &lt;p&gt; content &lt;/p&gt;<br>
+                  &lt;/div&gt;
+                </code> <br>
+               </p>
+            </div>
+            <div class = "callout secondary">
+                <h4>This is another callout, but secondary!</h4>
+                <p>Callouts can be colored using the <code>.secondary</code>, <code>.primary</code>, <code>.success</code>, <code>.warning</code>, or <code>.alert</code> classes.
+                <br>
+                For example, this callout uses <code> &lt;div class = "callout secondary"&gt;</code>
+              </p>
+            </div>
+            <div class = "callout warning" data-closable>
+                <h4>This is a callout, but with a warning!</h4>
+                <p> You can also make a callout closable by adding a closable button and the <code> data-closable</code> attribute. This creates a dismissable alert box like this one if motion-UI is added. Clicking on the 'X' won't do anything... for now. </p>
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+
+        <hr />
+
+        <h4 style="padding-left:30px"> XY Grid </h4>
+        <p style="padding-left:30px"> The XY Grid has multiple grid types, like margin grid, padding grid, frame grid, block grid, and vertical grid. It works similarly to the standard float grid, but includes a number of useful features like horizontal and vertical alignment and autosizing.</p>
+
+        <div class="grid-x">
+          <div class="cell" style="background: #1779ba;color: #fefefe;">full width cell</div>
+          <div class="cell" style="background: #d6ecfa;">full width cell</div>
+        </div>
+        <br>
+        <div class="grid-x">
+          <div class="cell small-6" style="background: #1779ba;color: #fefefe;">6 cells</div>
+          <div class="cell small-6" style="background: #d6ecfa;">6 cells</div>
+        </div>
+
+        <hr />
+
+        <h4 style="padding-left:30px"> Forms </h4>
+        <p style="padding-left:30px"> Look at this form layout! Forms are built with a combination of standard form elements, grid rows, columns, and cells. They also have the standard input types: <code>text</code> , <code>date</code>, <code>password</code>, <code>email</code>, and many more! </p>
         <div class = "grid-x grid-padding-x">
-            <div class = "cell large-4 medium-4 small-4">
-                <div class = "callout">
-                    <h4>This is a callout!</h4>
-                    <p>Bacon ipsum dolor amet meatball picanha burgdoggen doner, jowl boudin leberkas sirloin prosciutto shank shankle chicken jerky ground round filet mignon. Frankfurter tongue ground round, corned beef meatloaf pork loin jowl turkey ham ball tip picanha. Salami strip steak jerky, pork belly ham chicken shoulder kielbasa. Spare ribs porchetta chuck pork landjaeger biltong shankle burgdoggen t-bone boudin kielbasa turkey shank. Sirloin tongue pork belly pork chop jerky bacon brisket fatback andouille.</p>
-                </div>
-                <div class = "callout secondary">
-                    <h4>This is another callout, but secondary!</h4>
-                    <p>Ground round shoulder drumstick turkey strip steak alcatra jowl pastrami sirloin kevin pork loin boudin. Picanha chicken kevin alcatra. Frankfurter ground round short loin buffalo ribeye, swine meatloaf andouille tongue fatback sausage. Shank cupim shoulder, bresaola frankfurter picanha ball tip pork. Bacon short ribs turducken venison pork belly pork loin, pig cupim sirloin. Meatball bresaola tail shank.</p>
-                </div>
-                <div class = "callout warning">
-                    <h4>This is a callout, but with a warning!</h4>
-                    <p> You can create a callout with the following code: <br> <code>
-                      &lt;div class = "callout"&gt; <br>
-                      &lt;p&gt; content &lt;/p&gt;<br>
-                      &lt;/div&gt;
-                    </code> <br>
-                  Callouts can be colored using the <code>.secondary</code>, <code>.primary</code>, <code>.success</code>, <code>.warning</code>, or <code>.alert</code> classes. </p>
-                </div>
-            </div>
-            <div class = "cell large-4 medium-4 small-4 grid-x grid-margin-x">
-                <div class = "cell card large-6 medium-6 small-6">
-                    <img src="https://img.purch.com/w/660/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzAxNi82MDMvb3JpZ2luYWwvZWFydGgtZnJvbS1zcGFjZS5qcGc=">
-                    <div class="card-section">
-                        <h4>Earth</h4>
-                        <p>This is a cool use of cards to show off one of many planets, but also to demonstrate the use of an XY grid!</p>
-                    </div>
-                </div>
-                <div class = "cell card large-6 medium-6 small-6">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/768px-Neptune_Full.jpg">
-                    <div class="card-section">
-                        <h4>Neptune</h4>
-                        <p>They work similarly to the standard float grid. </p>
-                    </div>
-                </div>
-                <div class = "cell card large-6 medium-6 small-6">
-                    <img src="https://space-facts.com/wp-content/uploads/mars.jpg">
-                    <div class="card-section">
-                        <h4>Mars</h4>
-                        <p> With the ability to place any kind of content inside. </p>
-                    </div>
-                </div>
-                <div class = "cell card large-6 medium-6 small-6">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg/330px-Jupiter_and_its_shrunken_Great_Red_Spot.jpg">
-                    <div class="card-section">
-                        <h4>Jupiter</h4>
-                        <p>Create one using <br>
-                          <code> &lt; div class="card"&gt; <br> &lt;/div &gt;</code></p>
-                    </div>
-                </div>
-            </div>
-            <div class = "cell large-4 medium-4 small-4">
+
+
+            <div class = "cell large-8 medium-8 small-8">
                 <!-- <h4>A Pretty Cool Form</h4> -->
                 <div class = "callout">
                     <h4>Here's a form!</h4>
@@ -106,7 +152,11 @@
             </div>
         </div>
 
+        <hr />
 
-
+        <h4 style="padding-left:30px"> Resources </h4>
+        <p style="padding-left:30px"> For additional information, visit the <a href= "https://foundation.zurb.com/sites/docs/"> Foundation Documentation</a>. <br>
+        This website was brought to you by Jared Asch and Maggie Zhao. </p>
+      </hr>
     </body>
 </html>
