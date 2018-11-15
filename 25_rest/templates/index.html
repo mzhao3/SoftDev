@@ -1,0 +1,31 @@
+<!--
+Maggie Zhao
+SoftDev1 pd07
+K24- Getting more REST
+2018-11-14
+-->
+
+<!doctype html>
+<html>
+<head>
+  <title> Crime Data Explorer</title>
+</head>
+
+<body>
+  <h1> Exploring the Crime Data Explorer </h1>
+
+  <p> Looking at <b>larceny</b> based on <b> age</b>. </p>
+  <table style = "width:100%">
+    <th> Offense Name </th> <th> Data Year </th> <th> Unknown</th> <th> 0-9 </th> <th> 10-19 </th> <th> 20-29 </th> <th> 30-39 </th> <th> 40-49 </th><th> 50-59 </th> <th> 60-69 </th><th> 70-79 </th><th> 80-89 </th> <th> 90-99 </th>
+
+    {% for row in data %}
+      <tr>
+      {% for key in row %}
+        <td>  {{row[key]}} </td>
+        <!--<td> {{data[key]}}</td>-->
+        {% endfor %}
+      </tr>
+    {% endfor %}
+
+</body>
+</html>
