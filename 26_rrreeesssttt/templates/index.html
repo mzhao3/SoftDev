@@ -1,0 +1,53 @@
+<!--
+Maggie Zhao
+SoftDev1 pd07
+K26- Getting more REST
+2018-11-15
+-->
+
+<!doctype html>
+<html>
+<head>
+  <title> Crime Data Explorer</title>
+</head>
+
+<body>
+  <h3> From the Pokemon TCG API</h3>
+  {{poke["name"]}} <br>
+  <img src = {{poke["imageUrl"]}} alt="Pokemon Pic"> <br>
+  <p>
+    Ability: <br>
+    {{poke["ability"]["name"]}} <br>
+    {{poke["ability"]["text"]}}
+  </p>
+
+  <hr> <!------------------------------------------->
+
+  <h3> From the Holidays API</h3>
+  Holidays in December 2017
+  <table style = "width:100%">
+    <th> Name </th> <th> Date </th> <th> Public?</th>
+
+    {% for row in holiday %}
+      <tr>
+
+        <td>  {{row["name"]}} </td>
+        <td>  {{row["date"]}} </td>
+        <td>  {{row["public"]}} </td>
+      </tr>
+    {% endfor %}
+  </table>
+  <hr> <!------------------------------------------->
+
+  <h3> From the Studio Ghibli API</h3>
+  {% if ghibli %}
+      {% for vehicle in ghibli  %}
+        <p> {{vehicle['name']}} </p>
+        <p> {{vehicle['description']}} </p>
+        <p> {{vehicle['vehicle_class']}} </p>
+        <p> {{vehicle['length']}} </p>
+        <hr>
+      {% endfor %}
+    {% endif %}
+</body>
+</html>
