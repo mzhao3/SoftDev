@@ -39,7 +39,7 @@ var gcd = function(a, b) {
 };
 
 //external list
-var list = ["Axl Rose", "Brian May", "Chris Martin", "Dan Reynolds"];
+var list = ["Axl Rose", "Brian May", "Chris Martin", "David Bowie"];
 
 //returns a randomly selected name from a list
 var randomStudent = function() {
